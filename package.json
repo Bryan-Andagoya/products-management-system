@@ -2,12 +2,19 @@
   "name": "products-management-system_backend",
   "version": "1.0.0",
   "description": "Web apps 2 and Software Quality project. CRUD about products management",
+  "bugs": {
+    "email": "bryanandagoya@gmail.com"
+  },
   "homepage": "https://github.com/Bryan-Andagoya/products-management-system#readme",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "Bryan Andagoya",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bryan-Andagoya/products-management-system_backend"
+  }
 }
