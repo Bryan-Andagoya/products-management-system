@@ -1,0 +1,12 @@
+{
+  "name": "products-management-system",
+  "version": "1.0.0",
+  "description": "Web apps 2 and Software Quality project. CRUD about products management",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
