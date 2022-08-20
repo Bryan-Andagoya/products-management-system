@@ -2,6 +2,7 @@
   "name": "products-management-system",
   "version": "1.0.0",
   "description": "Web apps 2 and Software Quality project. CRUD about products management",
+  "homepage": "https://github.com/Bryan-Andagoya/products-management-system#readme",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
