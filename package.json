@@ -8,7 +8,7 @@
   "homepage": "https://github.com/Bryan-Andagoya/products-management-system#readme",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "Bryan Andagoya",
@@ -16,5 +16,9 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/Bryan-Andagoya/products-management-system_backend"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1"
   }
 }
