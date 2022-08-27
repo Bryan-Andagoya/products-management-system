@@ -2,12 +2,15 @@ import express, { Express, Request, Response } from "express";
 import dotenv from "dotenv";
 import { productsRouter } from "./src/routes";
 import mongoose from "mongoose";
+import morgan from "morgan";
+import { errorHandlerMiddleware } from "./src/middlewares";
 
 dotenv.config();
 
 const app: Express = express();
 const port = process.env.PORT;
 
+app.use(morgan("dev"));
 app.use(express.json());
 
 app.get("/", (_: Request, res: Response) => {
@@ -15,6 +18,8 @@ app.get("/", (_: Request, res: Response) => {
 });
 
 app.use("/api/v1/products", productsRouter);
+
+app.use(errorHandlerMiddleware);
 
 const start = async () => {
   try {
