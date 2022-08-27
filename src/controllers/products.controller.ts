@@ -1,12 +1,36 @@
 import { Request, Response } from "express";
 import { StatusCodes } from "http-status-codes";
-import { NotFoundError } from "../errors";
+import { PRODUCTS_PER_PAGE } from "../configs";
+import { BadRequestError, NotFoundError } from "../errors";
 import { Product } from "../models";
 require("express-async-errors");
 
-const getAllProducts = async (_: Request, res: Response) => {
-  const products = await Product.find({ isActive: true }).exec();
-  res.status(StatusCodes.OK).json(products);
+const getAllProducts = async (
+  req: Request<any, any, any, { page: string }, any>,
+  res: Response
+) => {
+  let page = parseInt(req.query.page);
+
+  if (page === undefined) {
+    page = 0;
+  }
+
+  if (page < 0) {
+    throw new BadRequestError("Página inválida.");
+  }
+
+  const products = await Product.find({ isActive: true })
+    .limit(20)
+    .skip(PRODUCTS_PER_PAGE * page)
+    .exec();
+
+  const data = {
+    count: products.length,
+    page,
+    products,
+  };
+
+  res.status(StatusCodes.OK).json(data);
 };
 
 const getProduct = async (req: Request<{ id: string }>, res: Response) => {
