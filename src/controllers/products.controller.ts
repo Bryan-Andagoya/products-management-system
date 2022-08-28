@@ -11,7 +11,7 @@ const getAllProducts = async (
 ) => {
   let page = parseInt(req.query.page);
 
-  if (page === undefined) {
+  if (isNaN(page)) {
     page = 0;
   }
 
